@@ -36,11 +36,12 @@ class MainActivity : AppCompatActivity() {
                 for(myData in responseBody){
                     myStringBuilder.append(myData.userId)
                     myStringBuilder.append(myData.id)
-                    myStringBuilder.append(myData.title.toString())
-                    myStringBuilder.append(myData.body.toString())
+                    myStringBuilder.append(myData.title)
+                    myStringBuilder.append(myData.body)
 
                 }
                 txtId.text = myStringBuilder
+                Log.d("res", "API:$myStringBuilder")
             }
 
             override fun onFailure(call: Call<List<MyDataItem>?>, t: Throwable) {
